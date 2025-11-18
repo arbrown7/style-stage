@@ -1,3 +1,572 @@
+/* Blueprint grid background */
+body {
+  background-color: $blueprint-dark;
+  color: $accent-blue;
+  font-family: "IBM Plex Mono", monospace;
+  line-height: 1.6;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient($grid-blue 1px, transparent 1px),
+    linear-gradient(90deg, $grid-blue 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: $line-blue;
+  color: $blueprint-dark;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 1000;
+  border: 2px solid $accent-blue;
+}
+
+.skip-link:focus {
+  top: 20px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+header {
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  border-bottom: 2px solid $line-blue;
+  margin-bottom: 60px;
+}
+
+/* Corner brackets */
+header::before,
+header::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid $line-blue;
+}
+
+header::before {
+  top: 20px;
+  left: 20px;
+  border-right: none;
+  border-bottom: none;
+}
+
+header::after {
+  bottom: 20px;
+  right: 20px;
+  border-left: none;
+  border-top: none;
+}
+
+.tagline {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: $line-blue;
+  font-weight: 300;
+}
+
+/* Navigation */
+nav {
+  border: 2px solid $line-blue;
+  padding: 20px;
+  margin-bottom: 60px;
+  position: relative;
+  background: rgba(10, 25, 41, 0.8);
+}
+
+/* Nav corner markers */
+nav::before,
+nav::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 2px solid $accent-blue;
+}
+
+nav::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+nav::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: $accent-blue;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+  position: relative;
+}
+
+nav a:hover {
+  border: 1px solid $accent-blue;
+  box-shadow: 0 0 10px $glow-blue;
+}
+
+/* Wireframe boxes */
+.wireframe-box {
+  border: 2px solid $line-blue;
+  padding: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  background: rgba(30, 58, 95, 0.1);
+}
+
+/* Corner markers for boxes */
+.wireframe-box::before,
+.wireframe-box::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $accent-blue;
+}
+
+.wireframe-box::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.wireframe-box::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Section labels */
+.wireframe-box > h2::before {
+  content: '§';
+  margin-right: 10px;
+  color: $line-blue;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: $accent-blue;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 2px;
+  background: $line-blue;
+}
+
+h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $line-blue;
+  margin: 25px 0 15px 0;
+  font-weight: 400;
+}
+
+p {
+  color: rgba(100, 181, 246, 0.8);
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+a {
+  color: $accent-blue;
+  text-decoration: none;
+  border-bottom: 1px solid $line-blue;
+  transition: all 0.3s;
+  padding-bottom: 2px;
+}
+
+a:hover {
+  color: #fff;
+  border-bottom-color: $accent-blue;
+  text-shadow: 0 0 10px $glow-blue;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  margin: 20px 0;
+}
+
+ul li {
+  padding: 10px 0 10px 30px;
+  position: relative;
+  color: rgba(100, 181, 246, 0.8);
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+ul li::before {
+  content: '□';
+  position: absolute;
+  left: 0;
+  color: $line-blue;
+  font-size: 1rem;
+}
+
+ul li:hover {
+  color: $accent-blue;
+}
+
+ul li:hover::before {
+  content: '■';
+  color: $accent-blue;
+}
+
+/* Ordered lists */
+ol {
+  list-style: none;
+  counter-reset: item;
+  margin: 20px 0;
+}
+
+ol li {
+  counter-increment: item;
+  padding: 10px 0 10px 40px;
+  position: relative;
+  color: rgba(100, 181, 246, 0.8);
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+ol li::before {
+  content: counter(item, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  color: $line-blue;
+  font-weight: 600;
+}
+
+/* Blockquote */
+blockquote {
+  border: 1px solid $line-blue;
+  border-left: 4px solid $accent-blue;
+  padding: 25px;
+  margin: 25px 0;
+  position: relative;
+  font-style: italic;
+  background: rgba(45, 90, 143, 0.05);
+}
+
+blockquote::before {
+  content: '❝';
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  font-size: 3rem;
+  color: $line-blue;
+  opacity: 0.3;
+  background: $blueprint-dark;
+  padding: 0 5px;
+}
+
+/* Code */
+code {
+  background: rgba(74, 144, 226, 0.1);
+  padding: 2px 8px;
+  border: 1px solid $line-blue;
+  color: $accent-blue;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9em;
+}
+
+/* Feature boxes */
+.feature-box {
+  border: 1px dashed $line-blue;
+  padding: 20px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.feature-box::before {
+  content: 'ℹ';
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  background: $blueprint-dark;
+  padding: 0 8px;
+  color: $accent-blue;
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid $line-blue;
+  color: $accent-blue;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  margin: 10px 10px 10px 0;
+  transition: all 0.3s;
+  position: relative;
+  background: transparent;
+}
+
+.btn::before,
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 2px solid $accent-blue;
+  transition: all 0.3s;
+}
+
+.btn::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.btn::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+.btn:hover {
+  background: rgba(74, 144, 226, 0.1);
+  box-shadow: 0 0 20px $glow-blue;
+  border-color: $accent-blue;
+  color: #fff;
+}
+
+.btn:hover::before,
+.btn:hover::after {
+  width: 15px;
+  height: 15px;
+}
+
+/* Sidebar */
+aside .wireframe-box {
+  padding: 30px;
+}
+
+aside h2 {
+  font-size: 1.3rem;
+}
+
+/* Dimension lines */
+.dimension-line {
+  position: relative;
+  height: 1px;
+  background: $line-blue;
+  margin: 30px 0;
+}
+
+.dimension-line::before,
+.dimension-line::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  background: $line-blue;
+  top: -5px;
+}
+
+.dimension-line::before {
+  left: 0;
+}
+
+.dimension-line::after {
+  right: 0;
+}
+
+/* Footer */
+footer {
+  border-top: 2px solid $line-blue;
+  padding: 60px 0;
+  text-align: center;
+  margin-top: 80px;
+  position: relative;
+}
+
+footer::before,
+footer::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid $line-blue;
+}
+
+footer::before {
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: none;
+}
+
+footer::after {
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: none;
+}
+
+footer p {
+  margin: 10px 0;
+  font-size: 0.9rem;
+  color: $line-blue;
+}
+
+footer a {
+  margin: 0 15px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $blueprint-dark;
+  border-left: 1px solid $line-blue;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $line-blue;
+  border: 2px solid $blueprint-dark;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $accent-blue;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 60px 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.2em;
+  }
+
+  h1::before,
+  h1::after {
+    display: none;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 0.75rem;
+  }
+
+  .wireframe-box {
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .wireframe-box {
+    padding: 25px;
+  }
+
+  aside {
+    grid-template-columns: 1fr;
+  }
+}
+
 .features {
   position: relative;
   width: 100%;
