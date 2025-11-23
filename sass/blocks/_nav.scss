@@ -54,4 +54,22 @@ nav {
       box-shadow: 0 0 10px var(--glow-blue);
     }
   }
+
+  @media (max-width: 768px) {
+    ul {
+      gap: 20px;
+    }
+
+    a {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  }
 }

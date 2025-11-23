@@ -1,25 +1,23 @@
 // Global styles
-@import "global/reset";
-@import "global/theme";
-@import "global/fonts";
-@import "global/typography";
-@import "global/styles";
+@import "global/_reset";
+@import "global/_theme";
+@import "global/_fonts";
+@import "global/_typography";
+@import "global/_styles";
 
 // Composition (layout)
-@import "composition/layout";
-@import "composition/links";
+@import "composition/_layout";
+@import "composition/_links";
 
 // Utilities (mixins/helpers)
-@import "utilities/mixins";
+@import "utilities/_mixins";
 
 // Blocks (sections/components)
-@import "blocks/logomark";
-@import "blocks/header";
-@import "blocks/nav";
-@import "blocks/footer";
-@import "blocks/about";
-@import "blocks/guidelines";
-@import "blocks/contribute";
-@import "blocks/profile";
-@import "blocks/files";
+@import "blocks/_block-quote";
+@import "blocks/_dimension-box";
+@import "blocks/_feature-box";
+@import "blocks/_footer";
+@import "blocks/_header";
+@import "blocks/_nav";
+@import "blocks/_skip-link";
 

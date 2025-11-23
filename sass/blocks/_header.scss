@@ -1,32 +1,39 @@
-// Header
 header {
   padding: 100px 0;
   text-align: center;
   position: relative;
   border-bottom: 2px solid var(--line-blue);
   margin-bottom: 60px;
+}
 
-  // Corner brackets
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--line-blue);
-  }
+h1 {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  text-shadow: 0 0 20px var(--glow-blue);
+  margin-bottom: 20px;
+  position: relative;
+  border-top: 2px solid var(--line-blue);
+  border-bottom: 2px solid var(--line-blue);
+}
 
-  &::before {
-    top: 20px;
-    left: 20px;
-    border-right: none;
-    border-bottom: none;
-  }
+.link-github svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--line-blue);
+}
 
-  &::after {
-    bottom: 20px;
-    right: 20px;
-    border-left: none;
-    border-top: none;
+.tagline {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: $line-blue;
+  font-weight: 300;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
   }
 }
