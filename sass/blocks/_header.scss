@@ -18,3 +18,22 @@ h1 {
   border-top: 2px solid var(--line-blue);
   border-bottom: 2px solid var(--line-blue);
 }
+
+.link-github svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--line-blue);
+}
+
+.tagline {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: $line-blue;
+  font-weight: 300;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+  }
+}

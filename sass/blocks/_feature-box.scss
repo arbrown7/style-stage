@@ -1,0 +1,17 @@
+.feature-box {
+    border: 1px dashed $line-blue;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+  
+    &::before {
+      content: 'i';
+      position: absolute;
+      top: -12px;
+      left: 15px;
+      background: $blueprint-dark;
+      padding: 0 8px;
+      color: $accent-blue;
+      font-weight: 600;
+    }
+}
