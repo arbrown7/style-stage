@@ -1,25 +1,22 @@
 $blueprint-dark: #0a1929 !default;
-$color-primary-alt: #4a90e2 !default;
-$color-secondary: #2d5a8f !default;
-$color-background: #1e3a5f !default;
+$blueprint-med: #1e3a5f  !default;
+$blueprint-light: #2d5a8f !default;
+$line-blue: #4a90e2 !default;
+$accent-blue: #64b5f6 !default;
+$grid-blue: rgba(74, 144, 226, 0.15) !default;
+$glow-blue: rgba(100, 181, 246, 0.3) !default;
 
 $brand-colors: (
-  primary: $color-primary,
-  primary-alt: $color-primary-alt,
-  secondary: $color-secondary,
+  blueprint-dark: $blueprint-dark,
+  blueprint-med: $blueprint-med,
+  blueprint-light: $blueprint-light,
+  line-blue: $line-blue,
+  accent-blue: $accent-blue,
+  grid-blue: $grid-blue,
+  glow-blue: $glow-blue,
 ) !default;
 
-$color-body: #64b5f6 !default;
-$color-gray: mix(#767676, $color-body, 70%) !default;
-
-$colors: map-merge(
-  $brand-colors,
-  (
-    background: $color-background,
-    text: $color-body,
-    light: #fff,
-  )
-);
+$colors: $brand-colors !default;
 
 @function color($key) {
   @return map-get($colors, $key);
@@ -29,10 +26,7 @@ $colors: map-merge(
   @return "%23" + str-slice("#{color($color)}", 2, -1);
 }
 
-$link-color: color(primary-alt) !default;
-$border-radius: 8px !default;
-
-$font-weight-strong: 500 !default;
+$font-weight-strong: 600 !default;
 $font-size-h1: 6rem !default;
 $font-size-h2: 3rem !default;
 $font-size-h3: 2rem !default;
@@ -50,16 +44,9 @@ $font-sizes: (
 // stylelint-disable
 :root {
   @each $key, $color in $colors {
-    --color-#{$key}: #{$color};
+    --#{$key}: #{$color};
   }
 
-  --color-anchor: #{$link-color};
   --font-family: "IBM Plex Mono", monospace;
   --font-weight-strong: #{$font-weight-strong};
-
-  @each $key, $size in $font-sizes {
-    --font-size-#{$key}: #{$size};
-  }
-
-  --border-radius: #{$border-radius};
 }
