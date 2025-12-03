@@ -7,24 +7,4 @@ h1 {
   text-shadow: 0 0 20px var(--glow-blue);
   margin-bottom: 20px;
   position: relative;
-
-  // Measurement lines on title
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    background: var(--line-blue);
-    width: 100px;
-  }
-
-  &::before {
-    top: 50%;
-    left: -120px;
-  }
-
-  &::after {
-    top: 50%;
-    right: -120px;
-  }
 }

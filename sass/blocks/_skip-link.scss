@@ -1,0 +1,18 @@
+.skip-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: var(--s-1);
+  background: transparent;
+  color: var(--accent-blue);
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0.7;
+  z-index: 9999;
+
+  &:focus,
+  &:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
