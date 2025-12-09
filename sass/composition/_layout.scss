@@ -1,0 +1,40 @@
+// Composition: layout helpers
+// Expects: utility mixins provided in `sass/utilities/_mixins.scss` (mq, container)
+
+/* A named container to avoid collision with global `.container`. */
+.layout-container {
+    @include container(1400px, 20px);
+}
+
+/* Stack utility: adds vertical spacing between direct children */
+.stack {
+    >*+* {
+        margin-top: 1rem;
+    }
+}
+
+/* Simple flex grid */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.col {
+    padding-left: 10px;
+    padding-right: 10px;
+    flex: 1 1 100%;
+}
+
+@include mq(md) {
+    .col--2 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col--3 {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+}

@@ -5,12 +5,12 @@
 @import "global/_typography";
 @import "global/_styles";
 
+// Utilities (mixins/helpers)
+@import "utilities/_mixins";
+
 // Composition (layout)
 @import "composition/_layout";
 @import "composition/_links";
-
-// Utilities (mixins/helpers)
-@import "utilities/_mixins";
 
 // Blocks (sections/components)
 @import "blocks/_block-quote";
@@ -20,4 +20,3 @@
 @import "blocks/_header";
 @import "blocks/_nav";
 @import "blocks/_skip-link";
-

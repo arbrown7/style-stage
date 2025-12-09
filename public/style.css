@@ -373,6 +373,81 @@ aside h2 {
     grid-template-columns: 1fr;
   }
 }
+/* Default breakpoints (can be overridden in global theme) */
+/* A named container to avoid collision with global `.container`. */
+.layout-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Stack utility: adds vertical spacing between direct children */
+.stack > * + * {
+  margin-top: 1rem;
+}
+
+/* Simple flex grid */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.col {
+  padding-left: 10px;
+  padding-right: 10px;
+  flex: 1 1 100%;
+}
+
+@media (min-width: 768px) {
+  .col--2 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col--3 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+a {
+  color: #64b5f6;
+  text-decoration: none;
+  border-bottom: 1px solid #4a90e2;
+  transition: color 160ms ease, text-shadow 160ms ease;
+  padding-bottom: 2px;
+}
+
+a:hover, a:focus {
+  color: #fff;
+  border-bottom-color: #64b5f6;
+  text-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
+}
+
+a:focus {
+  outline: 2px solid rgba(100, 181, 246, 0.25);
+  outline-offset: 2px;
+}
+
+.link--primary {
+  color: #4a90e2;
+}
+
+.link--muted {
+  color: rgba(100, 181, 246, 0.7);
+  text-decoration: none;
+}
+
+.link--underline-on-hover {
+  text-decoration: none;
+}
+.link--underline-on-hover:hover {
+  text-decoration: underline;
+}
+
 blockquote {
   border: 1px solid #4a90e2;
   border-left: 4px solid #64b5f6;
@@ -569,5 +644,3 @@ nav a:hover {
   opacity: 1;
   text-decoration: underline;
 }
-
-/*# sourceMappingURL=style.css.map */

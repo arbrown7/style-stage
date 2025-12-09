@@ -1,0 +1,66 @@
+/* Default breakpoints (can be overridden in global theme) */
+$breakpoints: (
+    sm: 480px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1200px) !default;
+
+@mixin mq($point) {
+    @if map-has-key($breakpoints, $point) {
+        @media (min-width: map-get($breakpoints, $point)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Unknown breakpoint: #{$point}";
+    }
+}
+
+@mixin visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0
+    );
+white-space: nowrap;
+border: 0;
+}
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin aspect-ratio($w, $h) {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        padding-top: ($h / $w ) * 100%;
+    }
+
+    >* {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@mixin container($max: 1200px, $pad: 20px) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $max;
+    padding-left: $pad;
+    padding-right: $pad;
+}

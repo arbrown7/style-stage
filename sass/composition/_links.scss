@@ -1,0 +1,39 @@
+// Composition: link styles
+// Expects: color tokens from `sass/global/_theme.scss` (e.g. $accent-blue, $line-blue, $glow-blue)
+
+a {
+    color: $accent-blue;
+    text-decoration: none;
+    border-bottom: 1px solid $line-blue;
+    transition: color 160ms ease, text-shadow 160ms ease;
+    padding-bottom: 2px;
+}
+
+a:hover,
+a:focus {
+    color: #fff;
+    border-bottom-color: $accent-blue;
+    text-shadow: 0 0 10px $glow-blue;
+}
+
+a:focus {
+    outline: 2px solid rgba(100, 181, 246, 0.25);
+    outline-offset: 2px;
+}
+
+.link--primary {
+    color: $line-blue;
+}
+
+.link--muted {
+    color: rgba(100, 181, 246, 0.7);
+    text-decoration: none;
+}
+
+.link--underline-on-hover {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
