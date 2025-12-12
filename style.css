@@ -421,7 +421,8 @@ a {
   padding-bottom: 2px;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   color: #fff;
   border-bottom-color: #64b5f6;
   text-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
@@ -467,44 +468,6 @@ blockquote::before {
   opacity: 0.3;
   background: #0a1929;
   padding: 0 5px;
-}
-
-.dimension-line {
-  position: relative;
-  height: 1px;
-  background: #4a90e2;
-  margin: 30px 0;
-}
-.dimension-line::before, .dimension-line::after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 10px;
-  background: #4a90e2;
-  top: -5px;
-}
-.dimension-line::before {
-  left: 0;
-}
-.dimension-line::after {
-  right: 0;
-}
-
-.feature-box {
-  border: 1px dashed #4a90e2;
-  padding: 20px;
-  margin: 20px 0;
-  position: relative;
-}
-.feature-box::before {
-  content: "i";
-  position: absolute;
-  top: -12px;
-  left: 15px;
-  background: #0a1929;
-  padding: 0 8px;
-  color: #64b5f6;
-  font-weight: 600;
 }
 
 footer {
@@ -644,3 +607,5 @@ nav a:hover {
   opacity: 1;
   text-decoration: underline;
 }
+
+/*# sourceMappingURL=style.css.map */
